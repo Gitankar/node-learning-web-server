@@ -16,9 +16,9 @@ app.use((req,res,next) =>{
   next();
 });
 
-app.use((req,res,next)=>{
-  res.render('mainteance.hbs');
-});
+// app.use((req,res,next)=>{
+//   res.render('mainteance.hbs');
+// });
 
 app.get('/', (req,res) =>{
   res.render('home.hbs',{
@@ -41,6 +41,11 @@ app.get('/bad', (req,res) =>{
   });
 });
 
+app.get('/project', (req,res)=>{
+  res.render('project.hbs',{
+    "projectMsg": "Upcoming Projects"
+  });
+});
 app.listen(port,()=>{
   console.log("Server is up on port : "+ port);
 });
